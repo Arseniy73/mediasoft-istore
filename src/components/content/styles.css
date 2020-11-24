@@ -1,0 +1,57 @@
+.container {
+    margin: 0 50px;
+    display: flex;
+}
+
+.content-inner {
+    width: 100%;
+    display: block;
+}
+
+.content-title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+nav {
+    margin: 15px 0;
+    display: block;
+    width: 100%;
+}
+
+nav a {
+    color: #91a6ba;
+    text-decoration: none;
+    transition: color 0.1s linear;
+}
+
+nav a:hover {
+    color: red;
+}
+
+.sorting {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sorting div {
+    color: #91a6ba;
+}
+
+.sort-select {
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.goods-ul {
+    box-sizing: border-box;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}

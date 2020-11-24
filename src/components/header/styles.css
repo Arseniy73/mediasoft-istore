@@ -1,0 +1,122 @@
+.container {
+    margin: 0 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.super-header {
+    height: 40px;
+    padding: 10px 50px;
+    background-color: #3960ff;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+.main-header {
+    margin: 15px 0;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    width: 10%;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.brand img {
+    width: 100%;
+    height: auto;
+}
+
+.header-menu {
+    display: flex;
+    align-items: center;
+}
+
+.header-menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.header-menu__item {
+    margin-right: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: color 0.2s linear;
+}
+
+.header-menu__item:hover {
+    color: rgb(255, 0, 0);
+}
+
+.social-menu {
+    display: flex;
+    align-items: center;
+}
+
+.social-menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.social-menu__item {
+    background-color: #fff;
+    font-size: 30px;
+    margin-right: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: color, background-color 0.2s linear;
+}
+
+.social-menu__item:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.header__phone a {
+    display: inline-block;
+    color: #111;
+    text-decoration: none;
+    padding-left: 1.4em;
+}
+
+.header__phone a:hover {
+    color: red;
+}
+
+.cart ul {
+    list-style: none;
+    display: flex;
+}
+
+.cart__item {
+    background-color: #fff;
+    font-size: 30px;
+    margin-right: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: color 0.2s linear;
+}
+
+.cart__item:hover {
+    color: red;
+}
