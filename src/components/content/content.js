@@ -7,12 +7,18 @@ export default function Content (props) {
         <div className="container">
             <div className="content-inner">
                 <nav>
-                    <a href="#">Главная</a>
+                    <a href="./index.html">Главная</a>
                     <h1 className="content-title">Магазин</h1>
                 </nav>
                 <br />
                 <div className="sorting">
-                    <div>Отображение 1–16 из 24</div>
+                    <div>Отображение {props.goods.length} из 12</div>
+                    <div className="sorting-buttons">
+                        <button className="sort-button" onClick={() => {props.showAll()}}>Все товары</button>
+                        <button className="sort-button" onClick={() => {props.sortHandler('chair')}}>Кресла</button>
+                        <button className="sort-button" onClick={() => {props.sortHandler('sofa')}}>Диваны</button>
+                        <button className="sort-button" onClick={() => {props.sortHandler('lamp')}}>Лампы</button>
+                    </div>
                     <form>
                         <select className="sort-select">
                             <option value="menu_order" defaultValue>Исходная сортировка</option>

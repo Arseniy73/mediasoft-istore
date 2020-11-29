@@ -16,6 +16,7 @@ ul {
     width: 23%;
     height: 400px;
     list-style: none;
+    margin-right: 23px;
 }
 
 .shop-inner {

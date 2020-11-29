@@ -41,6 +41,28 @@ nav a:hover {
     color: #91a6ba;
 }
 
+.sort-button {
+    background-color: rgb(139, 221, 132);
+    color: #fff;
+    font-weight: 900;
+    border: none;
+    border-radius: 7px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    transition: background-color .2s linear;
+}
+
+.sort-button:hover {
+    background-color: rgb(70, 182, 173);
+    color: #fff;
+}
+
+.sorting-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .sort-select {
     border-radius: 5px;
     padding: 10px 20px;
@@ -51,7 +73,7 @@ nav a:hover {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin: 0;
     padding: 0;
 }

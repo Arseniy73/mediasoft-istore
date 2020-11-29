@@ -3,11 +3,15 @@ import brand from './header-logo/brand.png'
 import './styles.css'
 import 'font-awesome/css/font-awesome.min.css'
 
-export default function Header () {
+export default function Header (props) {
+    const hours = props.time.getHours()
+    const minutes = props.time.getMinutes()
+
     return (
         <div>
             <div className="super-header">
                 <div className="header-item">г. Ульяновск, ул. Карла Маркса, 13А к.3, 3 этаж</div>
+                <div className="header-time">Текущее время <strong> {hours}:{minutes} </strong></div>
                 <div className="header-item">Скидки на Диван Куба до конца месяца!</div>
             </div>
             <header className="main-header">

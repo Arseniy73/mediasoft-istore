@@ -12,7 +12,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+}
+
+.header-time {
+    font-size: 1.2rem;
+}
   
 .main-header {
     margin: 15px 0;
