@@ -10,4 +10,72 @@ body {
   display: flex;
 }
 
+.App {
+  background-color: none;
+  transition: all .2s linear;
+}
 
+.App.dark {
+  background-color: rgb(61, 61, 61);
+  transition: all .2s linear;
+}
+
+.App.dark .header-menu__item {
+  color: #fff;
+}
+
+.App.dark .super-header {
+  background-color: rgba(240, 10, 182, 0.534)
+}
+
+.App.dark .header-menu__item:hover {
+  color: rgb(0, 255, 106);
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+.App.dark .social-menu__item {
+  color: rgb(0, 183, 255);
+}
+
+.App.dark .cart__item:hover {
+  background-color: rgb(127, 21, 131);
+  color: #fff;
+}
+
+.App.dark .header__phone a {
+  color: #fff;
+}
+
+.App.dark .cart__item {
+  color: rgb(0, 183, 255);
+}
+
+.App.dark .content-title {
+  color: #fff;
+}
+
+.App.dark .shop-inner {
+  border: .5px solid rgba(255, 255, 255, 0.315);
+}
+
+.App.dark .shop-inner {
+  color: #fff;
+}
+
+.App.dark .shop-inner:hover {
+  box-shadow: 0 6px 20px 10px rgb(255, 255, 255);
+}
+
+.App.dark .social-menu__item:hover {
+  background-color: rgb(127, 21, 131);
+  color: #fff;
+}
+
+.App.dark .card-page__col {
+  color: #fff;
+}
+
+.App.dark .footer {
+  background-color: #f8f8f88c;
+}

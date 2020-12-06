@@ -1,0 +1,35 @@
+.card-page-container {
+    margin: 50px 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-page__col {
+    width: 45%;
+}
+
+.item-page-img {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.item-page__buy {
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: blue;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: 900;
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+}
+
+.item-page__buy:hover {
+    background-color: blueviolet;
+}

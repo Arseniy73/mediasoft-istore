@@ -1,8 +1,15 @@
 import './App.css';
 import Content from './components/content';
 import Header from './components/header';
-import { useEffect, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import Footer from './components/footer';
+import {BrowserRouter, Switch, Route} from 'react-router-dom'
+import ItemPage from './components/itemPage';
+import Blog from './components/blog';
+import Payment from './components/payment/payment';
+
+
+export const Context = createContext()
 
 
 function App() {
@@ -21,10 +28,21 @@ function App() {
     {id: 12, title: "Офисное кресло Orange", price: "4800", sort: 'chair', img: './img/goodsCard/12.jpg'},
 ]
 
-  const [goods, setGoods] = useState(allGoods)
+console.log("render app");
 
-  const [time, setTime] = useState(new Date())
+const [goods, setGoods] = useState(allGoods)
 
+const [theme, setTheme] = useState(false)
+
+useEffect(() => {
+    let styles = document.getElementById('app')
+    styles.classList.toggle('dark')
+},[theme])
+
+function toggleTheme() {
+  setTheme(prev => !prev)
+  console.log(theme)
+}
 
 function sortItems (sort) {
   setGoods(allGoods)
@@ -35,21 +53,27 @@ function showAll () {
   setGoods(allGoods)
 }
 
-useEffect(() => {
-  const clockInterval = setInterval(() => {
-    setTime(new Date());
-  }, 1000);
-
-  return () => clearInterval(clockInterval);
-}, []);
 
 
   return (
-    <div className="App">
-      <Header time={time} />
-      <Content goods={goods} sortHandler={sortItems} showAll={showAll}  />
-      <Footer />
-    </div>
+    <Context.Provider value={goods}>
+      <div className="App" id="app">
+        <BrowserRouter>
+          <Header theme={theme} changeTheme={toggleTheme} />
+            <Switch>
+              <Route path="/" exact>
+                <Content goods={goods} sortHandler={sortItems} showAll={showAll} />
+              </Route>
+              <Route component={ItemPage} path="/itemPage/:id" exact></Route>
+              <Route component={Blog} path="/blog" exact></Route>
+              <Route component={Payment} path="/payment" exact></Route>
+            </Switch>
+
+            
+          <Footer />
+        </BrowserRouter>
+      </div>
+    </Context.Provider>
   );
 }
 

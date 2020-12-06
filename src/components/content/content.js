@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import GoodsCard from '../goodsCard'
 import './styles.css'
 
@@ -7,7 +8,7 @@ export default function Content (props) {
         <div className="container">
             <div className="content-inner">
                 <nav>
-                    <a href="./index.html">Главная</a>
+                    <Link className="nav__item" to="/">Главная</Link>
                     <h1 className="content-title">Магазин</h1>
                 </nav>
                 <br />
