@@ -49,12 +49,13 @@ nav a:hover {
     border-radius: 7px;
     padding: 5px 10px;
     margin-right: 5px;
-    transition: background-color .2s linear;
+    transition: all .2s linear;
 }
 
 .sort-button:hover {
     background-color: rgb(70, 182, 173);
-    color: #fff;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 7px 1px rgb(255, 255, 255);
 }
 
 .sorting-buttons {
