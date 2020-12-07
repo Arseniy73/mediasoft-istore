@@ -1,7 +1,7 @@
 import './App.css';
 import Content from './components/content';
 import Header from './components/header';
-import { createContext, useEffect, useState } from 'react'
+import { createContext, useState } from 'react'
 import Footer from './components/footer';
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import ItemPage from './components/itemPage';
@@ -32,16 +32,10 @@ console.log("render app");
 
 const [goods, setGoods] = useState(allGoods)
 
-const [theme, setTheme] = useState(false)
-
-useEffect(() => {
-    let styles = document.getElementById('app')
-    styles.classList.toggle('dark')
-},[theme])
 
 function toggleTheme() {
-  setTheme(prev => !prev)
-  console.log(theme)
+  let styles = document.getElementById('app')
+  styles.classList.toggle('dark')
 }
 
 function sortItems (sort) {
@@ -59,7 +53,7 @@ function showAll () {
     <Context.Provider value={goods}>
       <div className="App" id="app">
         <BrowserRouter>
-          <Header theme={theme} changeTheme={toggleTheme} />
+          <Header changeTheme={toggleTheme} />
             <Switch>
               <Route path="/" exact>
                 <Content goods={goods} sortHandler={sortItems} showAll={showAll} />
