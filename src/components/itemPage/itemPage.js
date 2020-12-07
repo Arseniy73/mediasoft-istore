@@ -18,7 +18,8 @@ export default function ItemPage ({match: {params: {id}}}) {
             </div>
             <div className="card-page__col">
                 <h1>{itemCard.title}</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio eius, aspernatur culpa fuga voluptatem harum recusandae tempore qui voluptatibus obcaecati.</p>  
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio eius, aspernatur culpa fuga voluptatem harum recusandae tempore qui voluptatibus obcaecati.</p>
+                <h1> <strong>{itemCard.price} руб</strong> </h1>  
                 <button className="item-page__buy">В корзину</button>
             </div>
         </div>
