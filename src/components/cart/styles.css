@@ -1,0 +1,22 @@
+.cart-container {
+    margin: 0 50px;
+    display: block;
+}
+
+.cart-title {
+    display: block;
+}
+
+.cart-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-content {
+    width: 68%;
+}
+
+.cart-sum {
+    width: 28%;
+    background-color: rgb(231, 231, 231);
+}

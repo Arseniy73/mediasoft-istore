@@ -7,6 +7,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import ItemPage from './components/itemPage';
 import Blog from './components/blog';
 import Payment from './components/payment/payment';
+import Cart from './components/cart';
 
 
 export const Context = createContext()
@@ -61,6 +62,7 @@ function showAll () {
               <Route component={ItemPage} path="/itemPage/:id" exact></Route>
               <Route component={Blog} path="/blog" exact></Route>
               <Route component={Payment} path="/payment" exact></Route>
+              <Route component={Cart} path="/cart" exact></Route>
             </Switch>
 
             

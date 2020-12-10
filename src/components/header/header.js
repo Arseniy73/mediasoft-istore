@@ -57,9 +57,9 @@ export default function Header (props) {
                             <li className="cart__item">
                                 <i className="fa fa-search" aria-hidden="true"></i>
                             </li>
-                            <li className="cart__item">
+                            <Link className="cart__item" to="/cart">
                                 <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-                            </li>
+                            </Link>
                         </ul>
                     </div>
                 </div>
