@@ -1,23 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import brand from './header-logo/brand.png'
 import './styles.css'
 import 'font-awesome/css/font-awesome.min.css'
+import ThemeContext from '../../utils/themeContext'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { getCartGoods } from '../../store/selectors'
 
-export default function Header (props) {
+export default function Header () {
+    const toggleTheme = useContext(ThemeContext)
     const cartGoods = useSelector(getCartGoods)
-
-    function changeTheme () {
-        props.changeTheme()
-    }
 
     return (
         <div>
             <div className="super-header">
                 <div className="header-item">г. Ульяновск, ул. Карла Маркса, 13А к.3, 3 этаж</div>
-                <button className="header-theme-btn" onClick={changeTheme}>Сменить тему</button>
+                <button className="header-theme-btn" onClick={toggleTheme}>Сменить тему</button>
                 <div className="header-item">Скидки на Диван Куба до конца месяца!</div>
             </div>
             <header className="main-header">

@@ -18,6 +18,7 @@ body {
 .App.dark {
   background-color: rgb(61, 61, 61);
   transition: all .2s linear;
+  color: #fff;
 }
 
 .App.dark .header-menu__item {
@@ -78,4 +79,8 @@ body {
 
 .App.dark .footer {
   background-color: #f8f8f88c;
+}
+
+.App.dark .footer-social__item {
+  color: black;
 }

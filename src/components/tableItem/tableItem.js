@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { removeFromCart } from '../../store/actions'
 import './styles.css'
 
-export default function SumTable ({item}) {
+export default function TableItem ({item}) {
     const [quantity, setQuantity] = useState(1)
 
     const dispatch = useDispatch(removeFromCart)
@@ -11,18 +11,13 @@ export default function SumTable ({item}) {
     function changeQuantity (event) {
         setQuantity(prev => prev = +event.target.value) 
     }
-    
+
     return (
-        <tr key={item.id}>
+        <tr className="table-item">
             <td><img src={item.img} alt={item.title} /></td>
             <td> {item.title} </td>
             <td> {item.price} </td>
             <td>
-                <label 
-                    className="screen-reader-text" 
-                    htmlFor="quantity">
-                    Количество
-                </label>
                 <input 
                     type="number" 
                     id="quantity" 
@@ -36,7 +31,7 @@ export default function SumTable ({item}) {
                     onChange={changeQuantity} 
                 />
             </td>
-            <td className="table__subtotal"> <strong> {item.price*quantity} </strong></td>
+            <td className="table__subtotal" id="table__subtotal"> <strong> {item.price*quantity} </strong></td>
             <td><button className="cart-remove-btn" onClick={() => {dispatch(removeFromCart(item.id))}}>&times;</button></td>
         </tr>
     )

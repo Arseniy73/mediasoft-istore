@@ -1,9 +1,16 @@
+.table-item {
+    height: 80px;
+}
+
+.table__subtotal {
+    font-size: 1.2rem;
+}
+
 .cart-remove-btn {
     background-color: red;
     color: #fff;
     border: none;
-    outline: auto;
-    border-radius: 50%;
+    border-radius: 40%;
     transition: all .2s linear;
 }
 
