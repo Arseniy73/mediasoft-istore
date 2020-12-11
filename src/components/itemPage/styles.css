@@ -24,6 +24,7 @@
     background-color: blue;
     border: none;
     border-radius: 20px;
+    outline: none;
     color: #fff;
     font-weight: 900;
     cursor: pointer;

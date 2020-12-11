@@ -1,13 +1,14 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart } from '../../store/actions'
-import { getGoods } from '../../store/selectors'
+import { getCartGoods, getGoods } from '../../store/selectors'
 import './styles.css'
 
 
 export default function ItemPage ({match: {params: {id}}}) {
     const goods = useSelector(getGoods)
     const dispatch = useDispatch()
+    const cartGoods = useSelector(getCartGoods)
 
     let itemCard = goods.find(item => item.id === +id)
     
@@ -20,7 +21,10 @@ export default function ItemPage ({match: {params: {id}}}) {
                 <h1>{itemCard.title}</h1>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio eius, aspernatur culpa fuga voluptatem harum recusandae tempore qui voluptatibus obcaecati.</p>
                 <h1> <strong>{itemCard.price} руб</strong> </h1>  
-                <button className="item-page__buy" onClick={() => {dispatch(addToCart(itemCard.id))}}>В корзину</button>
+                <button className="item-page__buy" onClick={() => {dispatch(addToCart(itemCard.id))}}>
+                    {cartGoods.find(item => item.id === itemCard.id) ? 
+                    <div>Добавлено</div>  : <div>В корзину</div>}
+                </button>
             </div>
         </div>
     )
