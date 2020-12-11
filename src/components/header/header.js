@@ -3,12 +3,11 @@ import brand from './header-logo/brand.png'
 import './styles.css'
 import 'font-awesome/css/font-awesome.min.css'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { getCartGoods } from '../../store/selectors'
 
 export default function Header (props) {
-    /* let hours = props.time.getHours()
-    hours = ("0" + hours).slice(-2);
-    let minutes = props.time.getMinutes()
-    minutes = ("0" + minutes).slice(-2); */
+    const cartGoods = useSelector(getCartGoods)
 
     function changeTheme () {
         props.changeTheme()
@@ -59,6 +58,7 @@ export default function Header (props) {
                             </li>
                             <Link className="cart__item" to="/cart">
                                 <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+                                {(cartGoods.length > 0) ? <div className="cart-filled"> {cartGoods.length} </div> : <div></div>}
                             </Link>
                         </ul>
                     </div>

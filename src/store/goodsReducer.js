@@ -1,4 +1,4 @@
-import { SHOW_ALL, SORT_GOODS } from "./types";
+import { ADD_TO_CART, REMOVE_FROM_CART, SHOW_ALL, SORT_GOODS } from "./types";
 
 const allGoods = [
     {id: 1, title: "Детское кресло", price: "6400", sort: 'chair', img: './img/goodsCard/1.jpg'},
@@ -16,34 +16,9 @@ const allGoods = [
 ]
 
 const initialState = {
-    goods: allGoods
+    goods: allGoods,
+    cartGoods: []
 }
-
-/* function sortItems (sort) {
-    setGoods(allGoods)
-    setGoods((prevGoods) => prevGoods.filter(good => good.sort === sort))
-} */
-
-/* const handlers = {
-    [SORT_GOODS]: (state = initialState, action) => ({
-      ...state,
-      goods: {...state, goods: [...state.goods.filter(good => good.sort === action.payload)]}
-    }),
-};
-
-export const goodsReducer = (state = initialState, action) => {
-    if(handlers[action.type]) {
-        return handlers[action.type](state.action)
-    }
-    return state
-} */
-
-/* const handlers = {
-    [SORT_GOODS]: (state = initialState, action) => ({
-      ...state,
-      goods: {...state, goods: [...state.goods.filter(good => good.sort === action.payload)]}
-    }),
-}; */
 
 export const goodsReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -51,6 +26,10 @@ export const goodsReducer = (state = initialState, action) => {
             return {...state, goods: allGoods.filter(good => good.sort === action.payload)}
         case SHOW_ALL:
             return {...state, goods: allGoods}
+        case ADD_TO_CART:
+            return {...state, cartGoods: state.cartGoods.concat(allGoods.filter(good => good.id === action.payload))}
+        case REMOVE_FROM_CART:
+            return {...state, cartGoods: state.cartGoods.filter(good => good.id !== action.payload)}
         default: return state
     }
 }

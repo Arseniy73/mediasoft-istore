@@ -20,3 +20,42 @@
     width: 28%;
     background-color: rgb(231, 231, 231);
 }
+
+.cart-table {
+    width: 100%;
+    text-align: right;
+}
+
+.table-img {
+    text-align: center;
+    width: 20%;
+}
+
+.table-name {
+    width: 20%;
+}
+
+.table-price {
+    width: 15%;
+}
+
+.table-quantity {
+    width: 20%;
+}
+
+.input-quantity {
+    width: 50%;
+}
+
+.table-sum {
+    width: 20%;
+}
+
+.table-remove {
+    width: 5%;
+}
+
+.table__subtotal {
+    font-size: 1.2rem;
+}
+

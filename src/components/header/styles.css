@@ -124,6 +124,7 @@
 }
 
 .cart__item {
+    position: relative;
     background-color: #fff;
     color: #000;
     font-size: 30px;
@@ -138,4 +139,19 @@
 
 .cart__item:hover {
     color: red;
+}
+
+.cart-filled {
+    border-radius: 50%;
+    background-color: orangered;
+    color: #fff;
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    bottom: -3px;
+    right: 6px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

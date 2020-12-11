@@ -1,12 +1,11 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
 import { showAll, sortGoods } from '../../store/actions'
 import { getGoods } from '../../store/selectors'
 import GoodsCard from '../goodsCard'
 import './styles.css'
 
-export default function Content (props) {
+export default function Content () {
     const goods = useSelector(getGoods)
     const dispatch = useDispatch()
     
@@ -15,8 +14,7 @@ export default function Content (props) {
         <div className="container">
             <div className="content-inner">
                 <nav>
-                    <Link className="nav__item" to="/">Главная</Link>
-                    <h1 className="content-title">Магазин</h1>
+                    <h1 className="content-title">Главная</h1>
                 </nav>
                 <br />
                 <div className="sorting">
