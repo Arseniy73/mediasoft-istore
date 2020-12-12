@@ -69,6 +69,7 @@ ul {
     border-radius: 20px;
     color: #fff;
     font-weight: 900;
+    outline: none;
     cursor: pointer;
     transition: all 0.2s linear;
 }

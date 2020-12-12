@@ -26,7 +26,7 @@ export default function TableItem ({item}) {
                     min="1" 
                     defaultValue="1" 
                     title="Кол-во" 
-                    size="4" 
+                    size="1" 
                     inputMode="numeric"
                     onChange={changeQuantity} 
                 />
