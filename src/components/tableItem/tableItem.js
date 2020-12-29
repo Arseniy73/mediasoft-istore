@@ -20,7 +20,7 @@ export default function TableItem ({item}) {
     
 
     return (
-        <tr className="table-item">
+        <tr className="table-item table-product">
             <td><img src={item.img} alt={item.title} /></td>
             <td> {item.title} </td>
             <td> {item.price} </td>

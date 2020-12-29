@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { getCartGoods, getTotalSum } from '../../store/selectors'
 import TableItem from '../tableItem'
 import './styles.css'
@@ -25,9 +26,12 @@ export default function Cart () {
                                 <th className="table-remove">Х</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            {cartGoods.map(item => {return <TableItem item={item} key={item.id} />})}
-                        </tbody>
+                        <TransitionGroup component="tbody" className="list-group">
+                            {cartGoods.map(item => (
+                                <CSSTransition classNames={'table-product'} timeout={1000}>
+                                    <TableItem item={item} key={item.id} />
+                                </CSSTransition>))}
+                        </TransitionGroup>
                     </table>
                     : <h2>Вы пока ничего не добавили</h2>}
                 </div>
