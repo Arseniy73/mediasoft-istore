@@ -1,16 +1,23 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { removeFromCart } from '../../store/actions'
+import { removeFromCart, setPcs } from '../../store/actions'
 import './styles.css'
 
 export default function TableItem ({item}) {
-    const [quantity, setQuantity] = useState(1)
+    const [quantity, setQuantity] = useState(item.pcs)
+    const dispatch = useDispatch()
 
-    const dispatch = useDispatch(removeFromCart)
+    const subtotal = item.price*quantity
     
     function changeQuantity (event) {
-        setQuantity(prev => prev = +event.target.value) 
+        setQuantity(+event.target.value)
+        dispatch(setPcs(item.id, +event.target.value ))
     }
+
+    useEffect(() => {
+        console.log("sum changed")
+    }, [dispatch])
+    
 
     return (
         <tr className="table-item">
@@ -24,14 +31,14 @@ export default function TableItem ({item}) {
                     className="input-quantity" 
                     step="1" 
                     min="1" 
-                    defaultValue="1" 
+                    defaultValue={item.pcs} 
                     title="Кол-во" 
                     size="1" 
                     inputMode="numeric"
                     onChange={changeQuantity} 
                 />
             </td>
-            <td className="table__subtotal" id="table__subtotal"> <strong> {item.price*quantity} </strong></td>
+            <td className="table__subtotal" id="table__subtotal"> <strong> {subtotal} </strong></td>
             <td><button className="cart-remove-btn" onClick={() => {dispatch(removeFromCart(item.id))}}>&times;</button></td>
         </tr>
     )

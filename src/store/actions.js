@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, SHOW_ALL, SORT_GOODS } from "./types";
+import { ADD_TO_CART, REMOVE_FROM_CART, SET_PCS, SHOW_ALL, SORT_GOODS } from "./types";
 
 const sortGoods = (sort) => ({
   type: SORT_GOODS,
@@ -19,4 +19,10 @@ const removeFromCart = (id) => ({
   payload: id
 });
 
-export { sortGoods, showAll, addToCart, removeFromCart };
+const setPcs = (id, pcs) => ({
+  type: SET_PCS,
+  payload: pcs,
+  id
+})
+
+export { sortGoods, showAll, addToCart, removeFromCart, setPcs };

@@ -8,16 +8,17 @@ import ItemPage from './components/itemPage';
 import Blog from './components/blog';
 import Payment from './components/payment/payment';
 import Cart from './components/cart';
+import { useState } from 'react';
 
 function App() {
+  const [dark, setDark] = useState(false)
 
   function toggleTheme() {
-    let style = document.getElementById('app')
-    style.classList.toggle('dark')
+    setDark(!dark)
   }
 
   return (
-    <div className="App" id="app">
+    <div className={dark ? "App dark" : "App"} id="app">
       <BrowserRouter>
         <ThemeContext.Provider  value={toggleTheme}>
           <Header />
